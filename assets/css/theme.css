@@ -132,16 +132,8 @@ p {
 /* Links and lists
 -------------------------------------------------- */
 
-a.internal em {
-  font-style: normal;
-}
-
 dl dd {
   margin: 3px 0 10px 30px;
-}
-
-.first {
-  margin-top: 0 !important;
 }
 
 /* Breadcrumb
@@ -165,21 +157,6 @@ blockquote {
   margin: 20px 0;
   padding: 15px 20px;
   font-size: 16px;
-}
-
-/* Line blocks (used for spacing)
--------------------------------------------------- */
-
-.line-block {
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
-}
-
-.line-block .line-block {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 1.5em;
 }
 
 /* Images
