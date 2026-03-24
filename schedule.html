@@ -1,217 +1,485 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Schedule</title>
-    <!-- Google Fonts -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Source+Serif+Pro:400,700"
-    />
-    <!-- Bootstrap CSS (CDN) -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css"
-    />
-    <link rel="stylesheet" href="assets/css/theme.css" />
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-    <style>
-      table {
-        border-collapse: collapse;
-        width: 100%;
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule</title>
+  <!-- Google Fonts -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Source+Serif+Pro:400,700" />
+  <!-- Bootstrap CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <style>
+    .schedule-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .schedule-desktop {
+      display: block;
+    }
+
+    .schedule-mobile {
+      display: none;
+      margin-top: 12px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 1024px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .header {
+      font-weight: bold;
+      background-color: #e6e6e6;
+    }
+
+    .break {
+      background-color: #f9f9f9;
+      font-style: italic;
+    }
+
+    .comp-type {
+      background-color: #f0f7ff;
+      font-weight: bold;
+    }
+
+    .poster {
+      background-color: #edfbff94;
+    }
+
+    @media (max-width: 768px) {
+      .schedule-table-wrap {
+        margin: 0 -8px;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
       }
+
+      .schedule-desktop {
+        display: none;
+      }
+
+      .schedule-mobile {
+        display: block;
+      }
+
+      table {
+        min-width: 700px;
+      }
+
+      .mobile-day table {
+        min-width: 0;
+      }
+
       th,
       td {
-        border: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
+        padding: 6px;
+        font-size: 13px;
+        line-height: 1.35;
       }
-      th {
-        background-color: #f2f2f2;
-      }
-      .header {
-        font-weight: bold;
-        background-color: #e6e6e6;
-      }
-      .break {
-        background-color: #f9f9f9;
-        font-style: italic;
-      }
-      .comp-type {
-        background-color: #f0f7ff;
-        font-weight: bold;
-      }
-      .poster {
-        background-color: #edfbff94;
-      }
-    </style>
-  </head>
+    }
+  </style>
+</head>
 
-  <body>
-    <div class="container-wrapper">
-      <div id="mobile-toggle">
-        <a href="#"
-          ><span
-            class="glyphicon glyphicon-align-justify"
-            aria-hidden="true"
-          ></span
-        ></a>
+<body>
+  <div class="container-wrapper">
+    <div id="mobile-toggle">
+      <a href="#"><span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span></a>
+    </div>
+
+    <div id="left-column">
+      <div class="sphinxsidebar" id="sidebar-content">
+        <!-- Sidebar injected by assets/js/templates.js -->
+      </div>
+    </div>
+
+    <div id="right-column">
+      <div role="navigation" aria-label="breadcrumbs navigation">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+
+          <li>Schedule</li>
+        </ol>
       </div>
 
-      <div id="left-column">
-        <div class="sphinxsidebar" id="sidebar-content">
-          <!-- Sidebar injected by assets/js/templates.js -->
-        </div>
-      </div>
+      <div class="document clearer body">
+        <div id="schedule">
+          <h1>
+            Schedule<a class="headerlink" href="#schedule" title="Permalink to this headline">&para;</a>
+          </h1>
+          <div class="schedule-table-wrap schedule-desktop" aria-label="Swipe horizontally to view full schedule table">
+            <table>
+              <tr>
+                <td class="header">Time</td>
+                <td class="header" colspan="2">April 16th</td>
+                <td class="header" colspan="3">April 17th</td>
+              </tr>
+              <tr>
+                <td>08:50</td>
+                <td colspan="2">Opening Remarks</td>
+                <td></td>
+                <td colspan="3">Poster Setup</td>
+              </tr>
+              <tr>
+                <td>09:00</td>
+                <td>Cris Kocian</td>
+                <td class="comp-type" rowspan="6">PRE-COMP/MS</td>
+                <td rowspan="6">09:00</td>
+                <td colspan="2" rowspan="6" class="poster"><b>POSTERS:</b> Sam Williams, Chandan Sahu, Sabrina Ashik,
+                  Christian Lundy, Anthony Delgadillo Salas de la Tierra, Zach Loveall, Lara Williams, Tsunami Sharmba,
+                  Jackson Saftner, Gabriel Dos Santos, Young Kim
+                </td>
+              </tr>
+              <tr>
+                <td>09:15</td>
+                <td>Liz Tofte</td>
+              </tr>
+              <tr>
+                <td>09:30</td>
+                <td>Renan Beckman</td>
+              </tr>
+              <tr>
+                <td>09:45</td>
+                <td>Lillian Miller</td>
+              </tr>
+              <tr>
+                <td>10:00</td>
+                <td>Ethan Heidtman</td>
+              </tr>
+              <tr>
+                <td>10:15</td>
+                <td>Arthur Lo</td>
+              </tr>
+              <tr>
+                <td>10:30</td>
+                <td class="break" colspan="2">BREAK</td>
+                <td>10:30</td>
+                <td class="break" colspan="2">BREAK</td>
+              </tr>
+              <tr>
+                <td>10:45</td>
+                <td>Dan Cove</td>
+                <td class="comp-type" rowspan="6">PRE-COMP</td>
+                <td>11:00</td>
+                <td>Sierra Melton (virtual)</td>
+                <td class="comp-type" rowspan="4">POST-COMP</td>
+              </tr>
+              <tr>
+                <td>11:00</td>
+                <td>Mingxi Hu</td>
+                <td>11:15</td>
+                <td>Noshin Sharmili</td>
+              </tr>
+              <tr>
+                <td>11:15</td>
+                <td>Ava Spangler</td>
+                <td>11:30</td>
+                <td>Caleb Norville</td>
+              </tr>
+              <tr>
+                <td>11:30</td>
+                <td>Bailey Hoplight</td>
+                <td>11:45</td>
+                <td>Eric Hasegawa</td>
+              </tr>
+              <tr>
+                <td>11:45</td>
+                <td>Mila Matney</td>
+                <td>12:00</td>
+                <td class="break" colspan="2">BREAK (LUNCH 12-1)</td>
+              </tr>
+              <tr>
+                <td>12:00</td>
+                <td>Alejo Giraldo</td>
+                <td>13:00</td>
+                <td>Erik Schoonover</td>
+                <td class="comp-type" rowspan="5">POST-COMP</td>
+              </tr>
+              <tr>
+                <td>12:15</td>
+                <td class="break" colspan="2">BREAK (LUNCH 12:15-1)</td>
+                <td>13:15</td>
+                <td>Emma Hartke</td>
+              </tr>
+              <tr>
+                <td rowspan="4">13:00</td>
+                <td colspan="2" rowspan="4" class="poster"><b>POSTERS:</b> Mingxi Hu, Ash Keenan, Laura Kelsall, Drew
+                  Moreland, Doní Anderson, Edo Nurshal, Guilherme Zakarewicz, Ula Filipowicz, Zach Baran, Olivia
+                  DiPrinzio
+                </td>
+                <td>13:30</td>
+                <td>Juliana Drozd</td>
+              </tr>
+              <tr>
+                <td>13:45</td>
+                <td>Em White</td>
+              </tr>
+              <tr>
+                <td>14:00</td>
+                <td>Rory Changleng</td>
+              </tr>
+              <tr>
+                <td>14:15</td>
+                <td class="break" colspan="2">BREAK</td>
+              </tr>
+              <tr>
+                <td>14:30</td>
+                <td class="break" colspan="2">BREAK</td>
+                <td>14:45</td>
+                <td>Fran Meyer</td>
+                <td class="comp-type" rowspan="5">POST-COMP</td>
+              </tr>
+              <tr>
+                <td>15:00</td>
+                <td>Jasmine Walker</td>
+                <td class="comp-type" rowspan="4">POST-COMP</td>
+                <td>15:00</td>
+                <td>Hanna Leapaldt</td>
+              </tr>
+              <tr>
+                <td>15:15</td>
+                <td>Ran He</td>
+                <td>15:15</td>
+                <td>Eddie Spagnuolo</td>
+              </tr>
+              <tr>
+                <td>15:30</td>
+                <td>Yusuke Kubota</td>
+                <td>15:30</td>
+                <td>Dani Buchheister</td>
+              </tr>
+              <tr>
+                <td>15:45</td>
+                <td>Oliver Neilson</td>
+                <td>15:45</td>
+                <td>Sarah Jonathan</td>
+              </tr>
+            </table>
+          </div>
 
-      <div id="right-column">
-        <div role="navigation" aria-label="breadcrumbs navigation">
-          <ol class="breadcrumb">
-            <li><a href="index.html">Home</a></li>
+          <div class="schedule-mobile" aria-label="Mobile schedule with April 16th and April 17th stacked vertically">
+            <div class="mobile-day">
+              <h2>April 16th (Thursday)</h2>
+              <table>
+                <tr>
+                  <th>Time</th>
+                  <th colspan="2">Program</th>
+                </tr>
+                <tr>
+                  <td>08:50</td>
+                  <td colspan="2">Opening Remarks</td>
+                </tr>
+                <tr>
+                  <td>09:00</td>
+                  <td>Cris Kocian</td>
+                  <td class="comp-type" rowspan="6">PRE-COMP/MS</td>
+                </tr>
+                <tr>
+                  <td>09:15</td>
+                  <td>Liz Tofte</td>
+                </tr>
+                <tr>
+                  <td>09:30</td>
+                  <td>Renan Beckman</td>
+                </tr>
+                <tr>
+                  <td>09:45</td>
+                  <td>Lillian Miller</td>
+                </tr>
+                <tr>
+                  <td>10:00</td>
+                  <td>Ethan Heidtman</td>
+                </tr>
+                <tr>
+                  <td>10:15</td>
+                  <td>Arthur Lo</td>
+                </tr>
+                <tr>
+                  <td>10:30</td>
+                  <td colspan="2" class="break">BREAK</td>
+                </tr>
+                <tr>
+                  <td>10:45</td>
+                  <td>Dan Cove</td>
+                  <td class="comp-type" rowspan="6">PRE-COMP</td>
+                </tr>
+                <tr>
+                  <td>11:00</td>
+                  <td>Mingxi Hu</td>
+                </tr>
+                <tr>
+                  <td>11:15</td>
+                  <td>Ava Spangler</td>
+                </tr>
+                <tr>
+                  <td>11:30</td>
+                  <td>Bailey Hoplight</td>
+                </tr>
+                <tr>
+                  <td>11:45</td>
+                  <td>Mila Matney</td>
+                </tr>
+                <tr>
+                  <td>12:00</td>
+                  <td>Alejo Giraldo</td>
+                </tr>
+                <tr>
+                  <td>12:15</td>
+                  <td colspan="2" class="break">BREAK (LUNCH 12:15-1)</td>
+                </tr>
+                <tr>
+                  <td>13:00</td>
+                  <td colspan="2" class="poster"><b>POSTERS:</b> Mingxi Hu, Ash Keenan, Laura Kelsall, Drew Moreland,
+                    Doni Anderson,
+                    Edo Nurshal, Guilherme Zakarewicz, Ula Filipowicz, Zach Baran, Olivia DiPrinzio</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>14:30</td>
+                  <td colspan="2" class="break">BREAK</td>
+                </tr>
+                <tr>
+                  <td>15:00</td>
+                  <td>Jasmine Walker</td>
+                  <td class="comp-type" rowspan="4">POST-COMP</td>
+                </tr>
+                <tr>
+                  <td>15:15</td>
+                  <td>Ran He</td>
+                </tr>
+                <tr>
+                  <td>15:30</td>
+                  <td>Yusuke Kubota</td>
+                </tr>
+                <tr>
+                  <td>15:45</td>
+                  <td>Oliver Neilson</td>
+                </tr>
+              </table>
+            </div>
 
-            <li>Schedule</li>
-          </ol>
-        </div>
-
-        <div class="document clearer body">
-          <div id="schedule">
-            <h1>
-              Schedule<a
-                class="headerlink"
-                href="#schedule"
-                title="Permalink to this headline"
-                >&para;</a
-              >
-            </h1>
-            <p>Schedule will be available in late March 2026...</p>
-            <!--
-  <table>
-    <tr>
-        <th colspan="6">Graduate Symposium 2026 Schedule</th>
-    </tr>
-    <tr>
-        <td class="header">Time</td>
-        <td class="header" colspan="2">April 16th</td>
-        <td class="header" colspan="3">April 17th</td>
-    </tr>
-    <tr>
-        <td>09:20</td>
-        <td colspan="2">Opening Remarks</td>
-        <td colspan="3"></td>
-    </tr>
-    <tr>
-        <td>09:30</td>
-        <td>Juliana Drozd</td>
-        <td class="comp-type" rowspan="5">PRE-COMP/MS</td>
-        <td>10:00</td>
-        <td colspan="2">Poster Setup</td>
-    </tr>
-    <tr>
-        <td>09:45</td>
-        <td>Caleb Norville</td>
-        <td rowspan="4">10:15</td>
-        <td colspan="2" rowspan="4" class="poster"><b>POSTERS:</b> Jackson Saftner, Bailey Hoplight, Christian Lundy, Renan Beckman, Lillian Miller, Amina Abdulsalam, Ethan Heidtman, Liz Tofte, Noshin Sharmili</td>
-    </tr>
-    <tr>
-        <td>10:00</td>
-        <td>Madison Hernandez</td>
-    </tr>
-    <tr>
-        <td>10:15</td>
-        <td>Mila Matney</td>
-    </tr>
-    <tr>
-        <td>10:30</td>
-        <td>Em White</td>
-    </tr>
-    <tr>
-        <td>10:45</td>
-        <td class="break" colspan="2">BREAK</td>
-        <td colspan="3"></td>
-    </tr>
-    <tr>
-        <td>11:00</td>
-        <td>Olli Neilson</td>
-        <td class="comp-type" rowspan="4">PRE-COMP</td>
-        <td>12:00</td>
-        <td class="break" colspan="2">BREAK (LUNCH 12:30-1:30, Grad Student Pizza Lunch)</td>
-    </tr>
-    <tr>
-        <td>11:15</td>
-        <td>Alejo Giraldo</td>
-        <td>13:45</td>
-        <td>Alexander Thames</td>
-        <td class="comp-type" rowspan="4">POST-COMP</td>
-    </tr>
-    <tr>
-        <td>11:30</td>
-        <td>Chandan Sahu</td>
-        <td>14:00</td>
-        <td>Youki Sato</td>
-    </tr>
-    <tr>
-        <td>11:45</td>
-        <td>Ava Spangler</td>
-        <td>14:15</td>
-        <td>Nolan Roth</td>
-    </tr>
-    <tr>
-        <td>12:00</td>
-        <td class="break" colspan="2">BREAK (LUNCH 12-1, Roots catered)</td>
-        <td>14:30</td>
-        <td>Karen Pham</td>
-    </tr>
-    <tr>
-        <td>13:00</td>
-        <td colspan="2" class="poster"><b>POSTERS:</b> Fran Meyer, Eric Hasegawa, Guilherme Zakarewicz, Gabriel dos Santos, Joseph Miller, Arthur Lo, Cole Stern</td>
-        <td>14:45</td>
-        <td class="break" colspan="2">BREAK</td>
-    </tr>
-    <tr>
-        <td>14:45</td>
-        <td class="break" colspan="2">BREAK</td>
-        <td>15:00</td>
-        <td>Sierra Melton*</td>
-        <td class="comp-type" rowspan="3">POST-COMP</td>
-    </tr>
-    <tr>
-        <td>15:00</td>
-        <td>Jasmine Walker</td>
-        <td class="comp-type" rowspan="4">PRE-COMP</td>
-        <td>15:15</td>
-        <td>Fai Chanchai</td>
-    </tr>
-    <tr>
-        <td>15:15</td>
-        <td>Young Kim</td>
-        <td>15:30</td>
-        <td>Kayla Irizarry</td>
-        
-    </tr>
-    <tr>
-        <td>15:30</td>
-        <td>Rory Changleng</td>
-        <td rowspan="2" colspan="3"><i>*Virtual talks</i></td>
-    </tr>
-    <tr>
-        <td>15:45</td>
-        <td>Edward Spagnuolo</td>
-        
-    </tr>
-</table>
-  -->
+            <div class="mobile-day">
+              <h2>April 17th (Friday)</h2>
+              <table>
+                <tr>
+                  <th>Time</th>
+                  <th>Program</th>
+                  <th>Type</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td colspan="2">Poster Setup</td>
+                </tr>
+                <tr>
+                  <td>09:00</td>
+                  <td colspan="2" class="poster"><b>POSTERS:</b> Sam Williams, Chandan Sahu, Sabrina Ashik, Christian
+                    Lundy, Anthony
+                    Delgadillo Salas de la Tierra, Zach Loveall, Lara Williams, Tsunami Sharmba, Jackson Saftner,
+                    Gabriel Dos Santos, Young Kim</td>
+                </tr>
+                <tr>
+                  <td>10:30</td>
+                  <td colspan="2" class="break">BREAK</td>
+                </tr>
+                <tr>
+                  <td>11:00</td>
+                  <td>Sierra Melton (virtual)</td>
+                  <td class="comp-type" rowspan="4">POST-COMP</td>
+                </tr>
+                <tr>
+                  <td>11:15</td>
+                  <td>Noshin Sharmili</td>
+                </tr>
+                <tr>
+                  <td>11:30</td>
+                  <td>Caleb Norville</td>
+                </tr>
+                <tr>
+                  <td>11:45</td>
+                  <td>Eric Hasegawa</td>
+                </tr>
+                <tr>
+                  <td>12:00</td>
+                  <td colspan="2" class="break">BREAK (LUNCH 12-1)</td>
+                </tr>
+                <tr>
+                  <td>13:00</td>
+                  <td>Erik Schoonover</td>
+                  <td class="comp-type" rowspan="5">POST-COMP</td>
+                </tr>
+                <tr>
+                  <td>13:15</td>
+                  <td>Emma Hartke</td>
+                </tr>
+                <tr>
+                  <td>13:30</td>
+                  <td>Juliana Drozd</td>
+                </tr>
+                <tr>
+                  <td>13:45</td>
+                  <td>Em White</td>
+                </tr>
+                <tr>
+                  <td>14:00</td>
+                  <td>Rory Changleng</td>
+                </tr>
+                <tr>
+                  <td>14:15</td>
+                  <td colspan="2" class="break">BREAK</td>
+                </tr>
+                <tr>
+                  <td>14:45</td>
+                  <td>Fran Meyer</td>
+                  <td class="comp-type" rowspan="5">POST-COMP</td>
+                </tr>
+                <tr>
+                  <td>15:00</td>
+                  <td>Hanna Leapaldt</td>
+                </tr>
+                <tr>
+                  <td>15:15</td>
+                  <td>Eddie Spagnuolo</td>
+                </tr>
+                <tr>
+                  <td>15:30</td>
+                  <td>Dani Buchheister</td>
+                </tr>
+                <tr>
+                  <td>15:45</td>
+                  <td>Sarah Jonathan</td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="clearfix"></div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/templates.js"></script>
-  </body>
+  <div class="clearfix"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+  <script src="assets/js/templates.js"></script>
+</body>
+
 </html>
