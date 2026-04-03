@@ -68,6 +68,42 @@
       background-color: #edfbff94;
     }
 
+    .presenter-link {
+      background: none;
+      border: 0;
+      padding: 0;
+      color: #1f5f92;
+      font: inherit;
+      text-align: left;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .presenter-link:hover,
+    .presenter-link:focus {
+      color: #0f3e62;
+      outline: none;
+    }
+
+    .presentation-modal-meta {
+      margin-top: 8px;
+    }
+
+    .presentation-modal-meta dt {
+      margin-top: 10px;
+      font-weight: 700;
+    }
+
+    .presentation-modal-meta dd {
+      margin-left: 0;
+      white-space: pre-wrap;
+    }
+
+    .presentation-modal-meta dd .nl-break {
+      display: block;
+      height: 0.7em;
+    }
+
     @media (max-width: 768px) {
       .schedule-table-wrap {
         margin: 0 -8px;
@@ -224,8 +260,8 @@
               </tr>
               <tr>
                 <td rowspan="4">13:00</td>
-                <td colspan="2" rowspan="4" class="poster"><b>POSTERS:</b> Mingxi Hu, Ash Keenan, Laura Kelsall, Drew
-                  Moreland, Doní Anderson, Edo Nurshal, Guilherme Zakarewicz, Ula Filipowicz, Zach Baran, Olivia
+                <td colspan="2" rowspan="4" class="poster"><b>POSTERS:</b> Mingxi Hu, Ash Keenan, Laura Kelsall,
+                  Drew Moreland, Doni Anderson, Edo Nurshal, Guilherme Zakarewicz, Ula Filipowicz, Zach Baran, Olivia
                   DiPrinzio
                 </td>
                 <td>13:30</td>
@@ -351,8 +387,7 @@
                 <tr>
                   <td>13:00</td>
                   <td colspan="2" class="poster"><b>POSTERS:</b> Mingxi Hu, Ash Keenan, Laura Kelsall, Drew Moreland,
-                    Doni Anderson,
-                    Edo Nurshal, Guilherme Zakarewicz, Ula Filipowicz, Zach Baran, Olivia DiPrinzio</td>
+                    Doni Anderson, Edo Nurshal, Guilherme Zakarewicz, Ula Filipowicz, Zach Baran, Olivia DiPrinzio</td>
                   <td></td>
                 </tr>
                 <tr>
@@ -393,9 +428,8 @@
                 </tr>
                 <tr>
                   <td>09:00</td>
-                  <td colspan="2" class="poster"><b>POSTERS:</b> Sam Williams, Chandan Sahu, Sabrina Ashik, Christian
-                    Lundy, Anthony
-                    Delgadillo Salas de la Tierra, Zach Loveall, Lara Williams, Tsunami Sharmba, Jackson Saftner,
+                  <td colspan="2" class="poster"><b>POSTERS:</b> Sam Williams, Chandan Sahu, Sabrina Ashik, Christian Lundy,
+                    Anthony Delgadillo Salas de la Tierra, Zach Loveall, Lara Williams, Tsunami Sharmba, Jackson Saftner,
                     Gabriel Dos Santos, Young Kim</td>
                 </tr>
                 <tr>
@@ -478,8 +512,34 @@
   </div>
 
   <div class="clearfix"></div>
+
+  <div class="modal fade" id="presentationModal" tabindex="-1" role="dialog" aria-labelledby="presentationModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="presentationModalLabel">Presentation</h4>
+        </div>
+        <div class="modal-body">
+          <dl class="presentation-modal-meta">
+            <dt>Authors</dt>
+            <dd id="presentationAuthors"></dd>
+            <dt>Institutions</dt>
+            <dd id="presentationInstitutions"></dd>
+            <dt>Abstract</dt>
+            <dd id="presentationAbstract"></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
   <script src="assets/js/templates.js"></script>
+  <script src="assets/js/schedule-popup.js"></script>
 </body>
 
 </html>
