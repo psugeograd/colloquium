@@ -1,5 +1,5 @@
 (function () {
-  var CSV_PATH = "assets/data/presentations.csv";
+  var CSV_PATH = "assets/data/abstracts-2026.csv";
 
   function normalizeName(value) {
     return String(value || "")
@@ -156,7 +156,8 @@
     function applyScriptMarkers(text) {
       return text
         .replace(/\^\{([^{}]+)\}/g, "<sup>$1</sup>")
-        .replace(/_\{([^{}]+)\}/g, "<sub>$1</sub>");
+        .replace(/_\{([^{}]+)\}/g, "<sub>$1</sub>")
+        .replace(/\*\{([^{}]+)\}/g, "<i>$1</i>");
     }
 
     function formatDisplayHtml(value) {
